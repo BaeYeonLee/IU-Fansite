@@ -14,8 +14,20 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  dirs: [
+    '~/components',
+    '~/components/widget' // - Added
+  ],
+
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    // '~assets/scss/_variables.scss'
+  ],
+  
+  // Use SCSS  - Added
+  styleResources: {
+    scss: '~/assets/scss/*.scss'
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -27,6 +39,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    // Use SCSS variable & mixin - Added
+    '@nuxtjs/style-resources',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
