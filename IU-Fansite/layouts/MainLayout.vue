@@ -1,7 +1,8 @@
 <template>
   <div class="wrapper">
+    <Background />
     <TheHeader/>
-    <Nuxt class="wrapper"/>
+    <TheContents />
     <TheFooter/>
   </div>
 </template>
@@ -11,6 +12,7 @@ export default {
 
 }
 </script>
+
 <style scope>
 .wrapper {
   position: relative;

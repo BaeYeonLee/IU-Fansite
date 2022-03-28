@@ -6,24 +6,8 @@
   box-sizing: border-box;
 }
 
-body {
-  width: 100%;
-  height: 100vh;
-  background-image: url('/img/iu_1920.jpg');
-  background-repeat: no-repeat;
-  background-position: top left;
-  background-size: cover;
-}
-
 a {
   text-decoration: none;
-}
-
-// MOBILE
-@media screen and (max-width: 768px) {
-  body {
-    background-position: top left -150px;
-  }
 }
 
 // Scrollbar Style

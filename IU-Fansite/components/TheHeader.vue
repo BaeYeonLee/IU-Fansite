@@ -53,15 +53,12 @@ export default {
     isMainPage() {
       return this.$route.path === this.$urls.main
     },
-    isMobile() {
-      return this.$isMobileDevice()
-    }
   },
   mounted() {
     const headerClass = this.isMainPage ? 'main-page' : 'menu'
     this.$refs.header.classList.add(headerClass)
 
-    if( this.isMobile ) {
+    if( this.$isMobileDevice() ) {
       this.$refs.header.classList.add('mobile')
       this.isMobileDevice = true
     }

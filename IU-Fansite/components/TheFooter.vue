@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss">
 footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 0;
   right: 0;

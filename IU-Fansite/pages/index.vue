@@ -1,5 +1,6 @@
 <template>
   <div class="image-cover">
+    <Background />
     <div class="cover-text">
       <p ref="indexHeader" class="cover-text__header">
         <b id="withU"> With U </b>
