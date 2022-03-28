@@ -22,7 +22,7 @@
       </template>
       <!-- Desktop Menu -->
       <template v-else>
-        <NuxtLink to="/main" class="header-title">
+        <NuxtLink :to="$urls.main" class="header-title">
           WITH U, <span class="accent"> IU </span>
         </NuxtLink>
         <ul class="header-menu">
@@ -51,7 +51,7 @@ export default {
   },
   computed: {
     isMainPage() {
-      return this.$route.path === '/main'
+      return this.$route.path === this.$urls.main
     },
     isMobile() {
       return this.$isMobileDevice()
