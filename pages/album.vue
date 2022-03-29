@@ -6,18 +6,20 @@
 
 // TODO :: CREATE MAIN PAGE
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   layout: 'MainLayout',
   created() {
-    console.log('this.$api', this.$api)
-    this.getAlbumList()
+    // this.getAlbumList()
+
+    this.setTitle('ALBUM')
   },
   methods: {
+    ...mapMutations({
+      setTitle: 'title/setTitle' 
+    }),
     async getAlbumList() {
-    console.log('getAlbumList this.$api', this.$api)
-    console.log('getAlbumList this.$urls', this.$urls)
-    
-
       const tempList = await this.$api.album.getList()
 
       // 앨범 나온 날짜 순으로 정렬

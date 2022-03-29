@@ -107,7 +107,8 @@ header {
 
     .header-title {
       display: none;
-      color: $IU-Header-Black;
+      // color: $IU-Header-Black;
+      color: $IU-White;
       font-size: 36px;
       font-family: 'Roboto';
       font-weight: bold;
@@ -142,10 +143,24 @@ header {
   } // END .header-contents
 
   &.menu {
-    background-color: white;
+    background-color: $IU-Black;
 
     .header-contents .header-title {
       display: inline-block;
+    }
+
+    .header-contents .menu-item {
+      color: $IU-LightViolet;
+      transform: translateY(0);
+      opacity: 1;
+      transition: .5s;
+
+      @for $i from 0 to 5 {
+        &.item-#{$i} {
+          // transform: translateY(0);
+          transition-delay: $i * 0.5s;
+        }
+      }
     }
   }
 
