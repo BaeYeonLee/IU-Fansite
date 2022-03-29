@@ -16,21 +16,24 @@ export default {
 
   dirs: [
     '~/components',
-    '~/components/widget' // - Added
+    '~/components/widget', // - Added
   ],
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     // '~assets/scss/_variables.scss'
   ],
-  
+
   // Use SCSS  - Added
   styleResources: {
-    scss: '~/assets/scss/*.scss'
+    scss: '~/assets/scss/*.scss',
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/utils.js'],
+  plugins: [
+    '~/plugins/utils.js',
+    '~/plugins/api',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -45,17 +48,9 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
   ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
-  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {

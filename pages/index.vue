@@ -39,6 +39,7 @@ export default {
       setTimeout(() => {
         this.$router.push(this.$urls.main)
       }, 3000)
+
     } else {
       this.$refs.goToMain.classList.add('showing')
     }
