@@ -26,7 +26,10 @@ export default {
 
   // Use SCSS  - Added
   styleResources: {
-    scss: '~/assets/scss/*.scss',
+    scss: [
+      '~/assets/scss/fansite.scss',
+      '~/assets/scss/mixin.scss',
+    ]
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -50,6 +53,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/device',
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

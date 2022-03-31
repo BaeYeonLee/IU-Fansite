@@ -8,9 +8,16 @@ const Util = {
             return mobile.test(navigator.userAgent);
         }
 
-        Vue.prototype.$urls = {
+        const url = {
             main: '/main'
         }
+
+        url.mobile = {}
+        Object.keys(url).forEach( key => {
+            url.mobile[key] = '/m' + url[key]
+        })
+
+        Vue.prototype.$urls = url
     }
 }
 
