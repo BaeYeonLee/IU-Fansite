@@ -23,11 +23,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scope>
-@media screen and (max-width: 768px) {
-  .cover-text__days {
-    display: none;
-  }
-}
-</style>

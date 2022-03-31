@@ -1,21 +1,20 @@
 <template>
   <div class="image-cover">
     <Background />
-    <div class="cover-text">
-      <p ref="indexHeader" class="cover-text__header">
+    <div ref="cover" class="cover-text">
+      <p class="cover-text__header">
         <b id="withU"> With U </b>
         <b id="IU" class="accent"> IU </b>
       </p>
-      <DateInfo />
-      <NuxtLink :to="$urls.main">
-          <p ref="goToMain" class="cover-text__link">
-            Go to 
-            <span class="accent"> 
-              Fansite
-              <img class="img-link-arrow" width="30px" height="30px" src="/img/arrow_yellow.png">
-            </span>
+      <template v-if="!$device.isMobile">
+        <DateInfo />
+        <NuxtLink :to="$urls.main">
+          <p class="cover-text__link">
+            Go to Fansite
+            <img class="img-link-arrow" width="30px" height="30px" src="/img/arrow_yellow.png">
           </p>
         </NuxtLink>
+      </template>
     </div>
   </div>
 </template>
@@ -35,21 +34,19 @@ export default {
   },
   mounted() {
     // TODO CHECK :: Mobile splash effect
-    if( this.$isMobileDevice() ) {
+    if( this.$device.isMobile ) {
       setTimeout(() => {
-        this.$router.push(this.$urls.main)
+        this.$router.push(this.$urls.mobile.main)
       }, 3000)
-
-    } else {
-      this.$refs.goToMain.classList.add('showing')
     }
-
-    this.$refs.indexHeader.classList.add('showing')
   }
 }
 </script>
 
 <style lang="scss" scope>
+@include slide-up(60);
+@include slide-left(100);
+
 .image-cover {
   display: flex;
   align-items: center;
@@ -72,17 +69,6 @@ export default {
 
   .accent {
     color: $IUNeon;
-    fill: $IUNeon;
-  }
-
-  a {
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  .img-link-arrow {
-    position: relative;
-    top: 5px;
-    margin-left: 10px;
   }
 }
 
@@ -91,43 +77,38 @@ export default {
     display: block;
     font-size: 50px;
     line-height: 60px;
-    transform: translateY(60px);
     opacity: 0;
+
+    @include animation(slide-up-60, 1.5s)
   }
 
-  &.showing {
-    #withU, #IU {
-      transform: translateY(0); 
-      opacity: 1;
-      transition: 1.5s;
-    }
-
-    #IU {
-      transition-delay: .7s;
-    }
+  #IU {
+    animation-delay: .7s;
+    @include animation(slide-up-60, 1.5s, .7s)
   }
 }
 
 .cover-text__link {
+  background: linear-gradient(45deg, $IU-White, $IUNeon);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-decoration: underline;
   cursor: pointer;
-  transform: translateX(-100px);
   opacity: 0;
 
-  &.showing {
-    transform: translateX(0); 
-    opacity: 1;
-    transition: 1s;
-    transition-delay: 1s;
+  @include animation(slide-left-100, 1s, 1s);
+
+  .img-link-arrow {
+    position: relative;
+    top: 5px;
+    margin-left: 10px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .image-cover {
     max-width: 50%;
-  }
-  .cover-text__link {
-    display: none;
   }
 }
 </style>
