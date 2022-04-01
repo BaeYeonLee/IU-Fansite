@@ -19,16 +19,14 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scope>
 footer {
+  height: 80px;
+  @include flex-center;
   position: relative;
   bottom: 0;
   left: 0;
   right: 0;
-  display: flex;
-  height: 80px;
-  justify-content: center;
-  align-items: center;
   background: $IU-Black;
   color: $IU-White;
 

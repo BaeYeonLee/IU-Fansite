@@ -3,7 +3,9 @@
     <div class="content-header">
       <b v-if="isNotMainPage" class="content-title">{{ getTitle }}</b>
     </div>
-    <Nuxt class="contents-body" :class="{'main': !isNotMainPage}"/>
+    <div class="contents-body" :class="{'main': !isNotMainPage}">
+      <Nuxt class="container" />
+    </div>
   </div>
 </template>
 
@@ -33,13 +35,17 @@ export default {
   bottom: 0;
 
   .content-header {
+    height: calc(100vh - 480px);
     position: relative;
     top: 0;
     left: 0;
     right: 0;
-    height: calc(100vh - 100px);
     background-color: $IU-Black-A20;
     padding-top: 80px;
+
+    &.main {
+      height: calc(100vh - 100px);
+    }
 
     .mobile & {
       width: 100%;
@@ -69,7 +75,9 @@ export default {
 
   .contents-body {
     min-height: calc(100vh - 160px);
+    position: relative;
     background-color: $IU-Black;
+    // z-index: 1500;
 
     &.main {
       min-height: calc(100vh - 80px);

@@ -15,7 +15,7 @@ export default {
 
 <style scope>
 .wrapper {
-  position: relative;
   height: 100vh;
+  position: relative;
 }
 </style>

@@ -208,9 +208,9 @@ header {
 .mobile-menu {
   width: 5px;
   height: 35px;
-  position: absolute;
   @include flex-center;
   flex-direction: column;
+  position: absolute;
   top: 40px;
   right: 45px;
   border-radius: 10px;

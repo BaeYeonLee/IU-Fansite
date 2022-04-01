@@ -11,10 +11,14 @@ const Util = {
         const url = {
             main: '/main',
             album: '/album',
-            filmo: '/filmo',
-            ad: '/ad',
-            history: '/history',
-            board: '/board',
+            filmo: '/album',
+            ad: '/album',
+            history: '/album',
+            board: '/album',
+            // filmo: '/filmo',
+            // ad: '/ad',
+            // history: '/history',
+            // board: '/board',
         }
 
         url.mobile = {}

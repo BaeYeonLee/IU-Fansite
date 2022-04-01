@@ -18,11 +18,11 @@ export default {
 
 <style lang="scss" scoped>
 .background {
+  width: 100vw;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
   z-index: -1;
   background-image: url('/img/iu_1920.jpg');
   background-repeat: no-repeat;

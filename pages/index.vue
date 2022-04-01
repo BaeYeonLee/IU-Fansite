@@ -48,13 +48,13 @@ export default {
 @include slide-right(100);
 
 .image-cover {
+  width: 100%;
+  max-width: 650px;
+  height: 100%;
   display: flex;
   align-items: center;
   position: absolute;
   right: 0;
-  width: 100%;
-  max-width: 650px;
-  height: 100%;
   background: linear-gradient(to right, rgba(0, 0, 0, 0), black);
 }
 

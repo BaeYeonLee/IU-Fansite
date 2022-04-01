@@ -1,6 +1,6 @@
 <template>
   <div class="album-page">
-    <WidgetTabs :tabs="albumTabs" @onChanged="onChangeTabs"/>
+    <WidgetMobileTabs v-if="$device.isMobile" :tabs="albumTabs" @onChanged="onChangeTabs"/>
     <div class="album-list grid-view">
       <WidgetThumnail
         v-for="album in showingList"
@@ -33,8 +33,7 @@ export default {
         { label: 'OST', code: 6,  count: 0 },
         { label: 'ETC', code: 7,  count: 0 },
       ],
-      // List filter code
-      filterCode: 0,
+      filterCode: 0, // List filter code
       // Album Data
       albumList: [],
     }
@@ -51,9 +50,8 @@ export default {
     },
   },
   created() {
-    this.getAlbumList()
-
     this.setTitle('ALBUM')
+    this.getAlbumList()
   },
   methods: {
     /* ------------------------------ VUEX METHOD ------------------------------ */
@@ -117,5 +115,8 @@ export default {
 <style lang="scss" scoped>
 .album-list {
   padding: 10px;
+  .mobile & {
+    padding: 10px 30px;
+  }
 }
 </style>
