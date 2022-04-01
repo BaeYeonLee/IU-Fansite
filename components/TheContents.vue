@@ -1,6 +1,6 @@
 <template>
   <div ref="mainPanel" class="main-panel">
-    <div class="content-header">
+    <div class="content-header" :class="{'main': !isNotMainPage}">
       <b v-if="isNotMainPage" class="content-title">{{ getTitle }}</b>
     </div>
     <div class="contents-body" :class="{'main': !isNotMainPage}">
