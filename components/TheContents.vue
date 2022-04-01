@@ -3,7 +3,7 @@
     <div class="content-header">
       <b v-if="isNotMainPage" class="content-title">{{ getTitle }}</b>
     </div>
-    <Nuxt class="contents-body"/>
+    <Nuxt class="contents-body" :class="{'main': !isNotMainPage}"/>
   </div>
 </template>
 
@@ -18,14 +18,9 @@ export default {
     }),
     isNotMainPage() {
       return this.$route.path !== this.$urls.main
+          && this.$route.path !== this.$urls.mobile.main
     },
   },
-  mounted() {
-    console.log('isNotMainPage', this.isNotMainPage)
-    if( this.$isMobileDevice() ) {
-      this.$refs.mainPanel.classList.add('mobile')
-    }
-  }
 }
 </script>
 
@@ -36,41 +31,57 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-}
 
-.content-header {
-  position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: calc(100vh - 100px);
-  background-color: $IU-Black-A20;
-  padding-top: 80px;
+  .content-header {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: calc(100vh - 100px);
+    background-color: $IU-Black-A20;
+    padding-top: 80px;
 
-  .mobile & {
+    .mobile & {
+      width: 100%;
+      height: calc(100vh - 200px);
+      @include flex-center;
       padding-top: 60px;
+    }
+
+    // TODO CHECK MOBILE POSITION
+    .content-title {
+      position: absolute;
+      top: 50%;
+      left: 60%;
+      font-family: Roboto;
+      font-size: 70px;
+      font-weight: bold;
+      font-style: italic;
+      color: $IU-Title-Violte;
+
+      .mobile & {
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+    }
   }
 
-  // TODO CHECK MOBILE POSITION
-  .content-title {
-    position: absolute;
-    top: 50%;
-    left: 60%;
-    font-family: Roboto;
-    font-size: 70px;
-    font-weight: bold;
-    font-style: italic;
-    color: $IU-Title-Violte;
-  }
-}
+  .contents-body {
+    min-height: calc(100vh - 160px);
+    background-color: $IU-Black;
 
-.contents-body {
-  min-height: calc(100vh - 80px);
-  background-color: $IU-Black;
+    &.main {
+      min-height: calc(100vh - 80px);
+    }
 
+    .mobile & {
+      min-height: calc(100vh - 120px);
 
-  .mobile & {
-    min-height: calc(100vh - 60px);
+      &.main {
+        min-height: calc(100vh - 60px);
+      }
+    }
   }
 }
 </style>

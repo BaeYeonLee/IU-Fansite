@@ -9,7 +9,12 @@ const Util = {
         }
 
         const url = {
-            main: '/main'
+            main: '/main',
+            album: '/album',
+            filmo: '/filmo',
+            ad: '/ad',
+            history: '/history',
+            board: '/board',
         }
 
         url.mobile = {}

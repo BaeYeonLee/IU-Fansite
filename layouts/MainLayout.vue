@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" :class="{'mobile': $device.isMobile}">
     <Background />
     <TheHeader/>
     <TheContents />

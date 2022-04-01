@@ -36,7 +36,7 @@ export default {
     // TODO CHECK :: Mobile splash effect
     if( this.$device.isMobile ) {
       setTimeout(() => {
-        this.$router.push(this.$urls.mobile.main)
+        this.$router.push(this.$urls.main)
       }, 3000)
     }
   }
@@ -45,7 +45,7 @@ export default {
 
 <style lang="scss" scope>
 @include slide-up(60);
-@include slide-left(100);
+@include slide-right(100);
 
 .image-cover {
   display: flex;
@@ -97,7 +97,7 @@ export default {
   cursor: pointer;
   opacity: 0;
 
-  @include animation(slide-left-100, 1s, 1s);
+  @include animation(slide-right-100, 1s, 1s);
 
   .img-link-arrow {
     position: relative;

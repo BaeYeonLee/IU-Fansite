@@ -10,6 +10,7 @@ export default {
   computed: {
     isMainPage() {
       return this.$route.path === this.$urls.main
+          || this.$route.path === this.$urls.mobile.main
     },
   },
 }

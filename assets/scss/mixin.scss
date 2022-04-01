@@ -26,6 +26,12 @@
   }
 }
 
+@mixin flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @mixin slide-up ($px) {
   @include keyframes(slide-up-#{$px}) {
     from {
@@ -40,8 +46,36 @@
   }
 }
 
+@mixin slide-down ($px) {
+  @include keyframes(slide-down-#{$px}) {
+    from {
+      transform: translateY(-#{$px}px);
+      opacity: 0;
+    }
+  
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    } 
+  }
+}
+
 @mixin slide-left ($px) {
   @include keyframes(slide-left-#{$px}) {
+    from {
+      transform: translateX(#{$px}px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+@mixin slide-right ($px) {
+  @include keyframes(slide-right-#{$px}) {
     from {
       transform: translateX(-#{$px}px);
       opacity: 0;
