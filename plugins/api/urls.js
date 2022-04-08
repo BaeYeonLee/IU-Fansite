@@ -5,3 +5,9 @@ export const ALBUM = {
   GET_OR_DELETE: 'album/',
   GET_LIST: 'album',
 }
+
+export const FILMOGRAPHY = {
+  UPSERT: 'filmography',
+  GET_OR_DELETE: 'filmography/',
+  GET_LIST: 'filmography',
+}

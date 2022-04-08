@@ -68,7 +68,7 @@ export default {
   font-style: italic;
 
   .accent {
-    color: $IUNeon;
+    color: $IU-Neon;
   }
 }
 
@@ -89,7 +89,7 @@ export default {
 }
 
 .cover-text__link {
-  background: linear-gradient(45deg, $IU-White, $IUNeon);
+  background: linear-gradient(45deg, $IU-White, $IU-Neon);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
