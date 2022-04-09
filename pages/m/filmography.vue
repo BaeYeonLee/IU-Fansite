@@ -1,6 +1,6 @@
 <template>
   <div class="filmo-page">
-    <WidgetTabs :tabs="filmoTabs" @onChanged="onChangeTabs"/>
+    <WidgetMobileTabs :tabs="filmoTabs" @onChanged="onChangeTabs"/>
     <div class="filmo-list grid-view">
       <WidgetThumnail
         v-for="filmo in showingList"
@@ -48,9 +48,8 @@ export default {
     },
   },
   created() {
-    this.getFilmographyList()
-
     this.setTitle('Filmograpy')
+    this.getFilmographyList()
   },
   methods: {
     /* ------------------------------ VUEX METHOD ------------------------------ */
@@ -104,5 +103,8 @@ export default {
 <style lang="scss" scoped>
 .filmo-list {
   padding: 10px;
+  .mobile & {
+    padding: 10px 30px;
+  }
 }
 </style>

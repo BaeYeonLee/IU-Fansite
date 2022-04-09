@@ -13,7 +13,7 @@
             v-for="(menu, index) in menuList"
             :key="menu"
             :class="['menu-item', `item-${index}`, { selected: isSelected(menu) }]"
-            @click.self="onClickMenu(menu.toLowerCase())"
+            @click.self="onClickMobileMenu(menu.toLowerCase())"
             >
             {{ menu }}
           </li>
@@ -60,7 +60,7 @@ export default {
     onClickMobile() {
       this.isMobileClick = !this.isMobileClick
     },
-    onClickMenu(menu) {
+    onClickMobileMenu(menu) {
       this.onClickMobile()
 
       this.$router.push(this.$urls.mobile[menu])

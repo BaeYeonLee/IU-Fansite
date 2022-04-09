@@ -11,7 +11,7 @@ const Util = {
         const url = {
             main: '/main',
             album: '/album',
-            filmo: '/album',
+            filmography: '/filmography',
             ad: '/album',
             history: '/album',
             board: '/album',
