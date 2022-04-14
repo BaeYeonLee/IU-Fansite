@@ -35,16 +35,19 @@ export default {
   bottom: 0;
 
   .content-header {
-    height: calc(100vh - 480px);
+    // height: calc(100vh - 480px);
+    height: 600px;
     position: relative;
     top: 0;
     left: 0;
     right: 0;
     background-color: $IU-Black-A20;
     padding-top: 80px;
+    transition: .5s;
 
     &.main {
-      height: calc(100vh - 100px);
+      // height: calc(100vh - 100px);
+      height: 830px;
     }
 
     .mobile & {

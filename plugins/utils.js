@@ -15,7 +15,6 @@ const Util = {
             ad: '/album',
             history: '/album',
             board: '/album',
-            // filmo: '/filmo',
             // ad: '/ad',
             // history: '/history',
             // board: '/board',
