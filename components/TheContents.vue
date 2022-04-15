@@ -4,7 +4,9 @@
       <b v-if="isNotMainPage" class="content-title">{{ getTitle }}</b>
     </div>
     <div class="contents-body" :class="{'main': !isNotMainPage}">
-      <Nuxt class="container" />
+      <transition name="fade">
+        <Nuxt class="container" />
+      </transition>
     </div>
   </div>
 </template>
@@ -13,6 +15,7 @@
 import { mapGetters } from 'vuex'
 
 export default {
+  transition: 'fade',
   data() {
     return {
       title: '',

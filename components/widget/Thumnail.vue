@@ -94,8 +94,8 @@ $IU-Thumnail-LightViolet: rgba(183, 150, 200, 0.3);
     bottom: 0;
     height: 30%;
     border-radius: 10px;
-    background: linear-gradient(to top, $IU-LightViolet, transparent);
-    color: white;
+    background: linear-gradient(to top, $IU-DeepViolet, transparent);
+    color: $IULightViolet;
     text-align: center;
     transition: 0.25s;
 
@@ -108,7 +108,7 @@ $IU-Thumnail-LightViolet: rgba(183, 150, 200, 0.3);
   &:hover {
     .thumnail-cover {
       height: 100%;
-      background: linear-gradient(to top, $IU-LightViolet, $IU-Thumnail-LightViolet);
+      background: linear-gradient(to top, $IU-DeepViolet, $IU-Transparent);
       transition: 0.25s;
     }
   }

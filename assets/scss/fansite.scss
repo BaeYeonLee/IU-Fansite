@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Noto Sans';
 }
 
 body {
@@ -35,6 +36,16 @@ a {
   .mobile & {
     grid-template-columns: repeat(2, minmax(140px, 1fr));
   }
+}
+
+// vue transition
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 
 // Scrollbar Style
