@@ -1,7 +1,7 @@
 <template>
   <div ref="mainPanel" class="main-panel">
     <div class="content-header" :class="{'main': !isNotMainPage}">
-      <b v-if="isNotMainPage" class="content-title">{{ title }}</b>
+      <b v-if="isNotMainPage" class="content-title">{{ getTitle }}</b>
     </div>
     <div class="contents-body" :class="{'main': !isNotMainPage}">
       <Nuxt class="container" />
@@ -15,7 +15,7 @@ import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
-      title: ''
+      title: '',
     }
   },
   computed: {
@@ -27,26 +27,26 @@ export default {
           && this.$route.path !== this.$urls.mobile.main
     },
   },
-  watch: {
-    getTitle() {
-      this.setTitle()
-    }
-  },
-  mounted() {
-    if( this.getTitle !== '' ) this.setTitle()
-  },
-  methods: {
-    setTitle() {
-      const charList = this.getTitle.split('')
-      this.title = ''
+  // watch: {
+  //   getTitle() {
+  //     this.setTitle()
+  //   }
+  // },
+  // mounted() {
+  //   if( this.getTitle !== '' ) this.setTitle()
+  // },
+  // methods: {
+  //   setTitle() {
+  //     const charList = this.getTitle.split('')
+  //     this.title = ''
 
-      charList.forEach( (char, idx) => {
-        setTimeout(() => {
-          this.title += char
-        }, (idx + 1) * 80)
-      });
-    }
-  },
+  //     charList.forEach( (char, idx) => {
+  //       setTimeout(() => {
+  //         this.title += char
+  //       }, (idx + 1) * 80)
+  //     });
+  //   }
+  // },
 }
 </script>
 

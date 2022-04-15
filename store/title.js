@@ -18,17 +18,20 @@
 export default {
   state() {
     return {
-      title: ''
+      title: '',
     }
   },
   getters: {
     getTitle(state) {
       return state.title
-    }
+    },
   },
   mutations: {
     setTitle(state, title) {
       state.title = title
+    },
+    addTitle(state, char) {
+      state.title += char
     },
   }
 }
