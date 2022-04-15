@@ -57,9 +57,6 @@ export default {
       default: '',
     },
   },
-  mounted() {
-    console.log('image', this.image)
-  },
   methods: {
     goToLink() {
       if (this.$route.path.includes('album')) {
@@ -85,7 +82,7 @@ $IU-Thumnail-LightViolet: rgba(183, 150, 200, 0.3);
   cursor: pointer;
 
   img {
-    @include match-parent;
+    width: 100%;
     border-radius: 10px;
   }
 

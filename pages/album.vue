@@ -1,24 +1,26 @@
 <template>
   <div class="album-page">
     <WidgetTabs :tabs="albumTabs" @onChanged="onChangeTabs"/>
-    <div class="album-list grid-view">
-      <WidgetThumnail
-        v-for="album in showingList"
-        :key="album.id"
-        :id="album.id"
-        :title="album.title"
-        :date="album.release_date"
-        :type="album.type"
-        :image_url="album.image_url"
-        />
+      <div class="album-list grid-view">
+        <WidgetThumnail
+          v-for="album in showingList"
+          :id="album.id"
+          :key="album.id"
+          :title="album.title"
+          :date="album.release_date"
+          :type="album.type"
+          :image_url="album.image_url"
+          />
     </div>
   </div>
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import setTitle from '~/mixin/setTitle'
 
 export default {
+  name: 'Album',
+  mixins: [setTitle],
   layout: 'MainLayout',
   data() {
     return {
@@ -45,21 +47,13 @@ export default {
         return this.albumList
       }
 
-      return this.albumList.filter(album => {
-        return album.album_type === this.filterCode
-      })
+      return this.albumList.filter(album => album.album_type === this.filterCode)
     },
   },
   created() {
     this.getAlbumList()
-
-    this.setTitle('ALBUM')
   },
   methods: {
-    /* ------------------------------ VUEX METHOD ------------------------------ */
-    ...mapMutations({
-      setTitle: 'title/setTitle' 
-    }),
     /* ------------------------------ EVENT METHOD ------------------------------ */
     onChangeTabs(filterCode) {
       this.filterCode = filterCode
@@ -116,6 +110,6 @@ export default {
 
 <style lang="scss" scoped>
 .album-list {
-  padding: 10px;
+  @include item-list;
 }
 </style>

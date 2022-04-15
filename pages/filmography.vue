@@ -18,9 +18,11 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import setTitle from '~/mixin/setTitle'
 
 export default {
+  name: 'Filmograpy',
+  mixins: [setTitle],
   layout: 'MainLayout',
   data() {
     return {
@@ -49,14 +51,8 @@ export default {
   },
   created() {
     this.getFilmographyList()
-
-    this.setTitle('Filmograpy')
   },
   methods: {
-    /* ------------------------------ VUEX METHOD ------------------------------ */
-    ...mapMutations({
-      setTitle: 'title/setTitle' 
-    }),
     /* ------------------------------ EVENT METHOD ------------------------------ */
     onChangeTabs(filterCode) {
       this.filterCode = filterCode
@@ -103,6 +99,6 @@ export default {
 
 <style lang="scss" scoped>
 .filmo-list {
-  padding: 10px;
+  @include item-list;
 }
 </style>

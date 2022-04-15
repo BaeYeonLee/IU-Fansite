@@ -28,7 +28,6 @@ export default {
   },
   mutations: {
     setTitle(state, title) {
-      console.log('mutations title : ' + title)
       state.title = title
     },
   }

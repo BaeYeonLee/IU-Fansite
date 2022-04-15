@@ -4,8 +4,8 @@
     <div class="album-list grid-view">
       <WidgetThumnail
         v-for="album in showingList"
-        :key="album.id"
         :id="album.id"
+        :key="album.id"
         :title="album.title"
         :date="album.release_date"
         :type="album.type"
